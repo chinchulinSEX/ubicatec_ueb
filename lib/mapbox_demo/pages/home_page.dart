@@ -1,6 +1,7 @@
 // file: lib/mapbox_demo/pages/home_page.dart
 import 'dart:async';
 import 'dart:typed_data';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -169,7 +170,8 @@ class _HomePageState extends State<HomePage> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: const Icon(Icons.my_location, color: Colors.white, size: 28),
+              child:
+                  const Icon(Icons.my_location, color: Colors.white, size: 28),
             ),
           ),
         ],
@@ -185,6 +187,7 @@ class _HomePageState extends State<HomePage> {
       {'lat': -17.7815990, 'lon': -63.1613355},
       {'lat': -17.7816350, 'lon': -63.1613559},
       {'lat': -17.7815629, 'lon': -63.1614225}, // destino
+      {'lat': -18.7815629, 'lon': -64.1614225}, // destino
     ];
 
     const baseLat = -17.7815185;
@@ -279,8 +282,8 @@ class _HomePageState extends State<HomePage> {
     await mapboxMapController!.flyTo(
       mp.CameraOptions(
         center: mp.Point(
-          coordinates:
-              mp.Position(currentPosition!.longitude, currentPosition!.latitude),
+          coordinates: mp.Position(
+              currentPosition!.longitude, currentPosition!.latitude),
         ),
         zoom: 17.5,
         pitch: 45.0,
